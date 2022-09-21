@@ -22,10 +22,6 @@ website:
         href: https://github.com/DACSS/601_Fall_2022
         aria-label: GitHub
 
-execution:
-  freeze: auto
-
-
 format:
   html:
     mainfont: Open Sans
