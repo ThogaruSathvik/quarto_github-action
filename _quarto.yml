@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  # output-dir: docs
 
 website:
   title: ""
@@ -22,6 +22,9 @@ website:
       - icon: github
         href: https://github.com/DACSS/601_Fall_2022
         aria-label: GitHub
+
+execute:
+  freeze: auto
 
 format:
   html:
