@@ -2,18 +2,35 @@ project:
   type: website
 
 website:
-  title: "quarto_github_action"
+  title: ""
+  site-url: https://dacss.github.io/601_Fall_2022/
+  twitter-card:
+    creator: "@UMassDACSS"
+    site: "@UMassDACSS"
+  favicon: images/DACSS_Round_Network.png
   navbar:
+    background: "#881c1c"
+    logo: images/UMass White Wordmark Horiz.png
     right:
-      - about.qmd
+      - text: "Fall 2022 Posts"
+        href: https://dacss.github.io/601_Fall_2022/
+      - text: "Contributors"
+        file: about.qmd
+      - href: https://umass.edu/sbs/dacss
+        text: "DACSS"
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/DACSS/601_Fall_2022
+        aria-label: GitHub
+
+execution:
+  freeze: auto
+
+
 format:
   html:
-    theme: cosmo
-    css: styles.css
-
-
-
+    mainfont: Open Sans
+    linkcolor: "#881c1c"
+    toc: true
+    theme: 
+      light: [flatly, styles.scss]
+      dark: [darkly, styles.scss]
