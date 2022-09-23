@@ -1,1 +1,1 @@
-Sitemap: https://ThogaruSathvik.github.io/quarto_github-action/sitemap.xml
+Sitemap: https://dacss.github.io/601_Fall_2022/sitemap.xml
