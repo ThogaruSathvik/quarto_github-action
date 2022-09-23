@@ -232,14 +232,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in library(tidyverse): there is no package called 'tidyverse'</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="challenge-overview" class="level2">
@@ -261,12 +256,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the hotel bookings data set</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'./_data/hotel_bookings.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the hotel bookings data set</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'./_data/hotel_bookings.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in read_csv("./_data/hotel_bookings.csv"): could not find function "read_csv"</code></pre>
-</div>
 </div>
 <p>Add any comments or documentation as needed. More challenging data may require additional code chunks and documentation.</p>
 </section>
@@ -277,40 +269,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in spec(df): could not find function "spec"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>cols(
+  hotel = col_character(),
+  is_canceled = col_double(),
+  lead_time = col_double(),
+  arrival_date_year = col_double(),
+  arrival_date_month = col_character(),
+  arrival_date_week_number = col_double(),
+  arrival_date_day_of_month = col_double(),
+  stays_in_weekend_nights = col_double(),
+  stays_in_week_nights = col_double(),
+  adults = col_double(),
+  children = col_double(),
+  babies = col_double(),
+  meal = col_character(),
+  country = col_character(),
+  market_segment = col_character(),
+  distribution_channel = col_character(),
+  is_repeated_guest = col_double(),
+  previous_cancellations = col_double(),
+  previous_bookings_not_canceled = col_double(),
+  reserved_room_type = col_character(),
+  assigned_room_type = col_character(),
+  booking_changes = col_double(),
+  deposit_type = col_character(),
+  agent = col_character(),
+  company = col_character(),
+  days_in_waiting_list = col_double(),
+  customer_type = col_character(),
+  adr = col_double(),
+  required_car_parking_spaces = col_double(),
+  total_of_special_requests = col_double(),
+  reservation_status = col_character(),
+  reservation_status_date = col_date(format = "")
+)</code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                              
-1 function (x, df1, df2, ncp, log = FALSE)    
-2 {                                           
-3     if (missing(ncp))                       
-4         .Call(C_df, x, df1, df2, log)       
-5     else .Call(C_dnf, x, df1, df2, ncp, log)
-6 }                                           </code></pre>
+<pre><code># A tibble: 6 × 32
+  hotel   is_ca…¹ lead_…² arriv…³ arriv…⁴ arriv…⁵ arriv…⁶ stays…⁷ stays…⁸ adults
+  &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1 Resort…       0     342    2015 July         27       1       0       0      2
+2 Resort…       0     737    2015 July         27       1       0       0      2
+3 Resort…       0       7    2015 July         27       1       0       1      1
+4 Resort…       0      13    2015 July         27       1       0       1      1
+5 Resort…       0      14    2015 July         27       1       0       2      2
+6 Resort…       0      14    2015 July         27       1       0       2      2
+# … with 22 more variables: children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;,
+#   country &lt;chr&gt;, market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;,
+#   is_repeated_guest &lt;dbl&gt;, previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, reserved_room_type &lt;chr&gt;,
+#   assigned_room_type &lt;chr&gt;, booking_changes &lt;dbl&gt;, deposit_type &lt;chr&gt;,
+#   agent &lt;chr&gt;, company &lt;chr&gt;, days_in_waiting_list &lt;dbl&gt;,
+#   customer_type &lt;chr&gt;, adr &lt;dbl&gt;, required_car_parking_spaces &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 <p>The output above shows that each row in the data set is describing an instance of a hotel booking. For each booking, we are recording 32 data parameters as described by the columns. Additionally, we can see that some of the entries have a value of “NULL”. For instance, the first row of the data set has an agent and company listed as “NULL”. This is probably used to describe instances in which an travel agent or travel company was not used. The following code creates a data frame containing all the rows that have a “NULL” value.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>NULLS <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'NULL'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>NULLS <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'NULL'</span>)))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NULLS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in df %&gt;% filter_all(any_vars(. %in% c("NULL"))): could not find function "%&gt;%"</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NULLS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in head(NULLS): object 'NULLS' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 32
+  hotel   is_ca…¹ lead_…² arriv…³ arriv…⁴ arriv…⁵ arriv…⁶ stays…⁷ stays…⁸ adults
+  &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1 Resort…       0     342    2015 July         27       1       0       0      2
+2 Resort…       0     737    2015 July         27       1       0       0      2
+3 Resort…       0       7    2015 July         27       1       0       1      1
+4 Resort…       0      13    2015 July         27       1       0       1      1
+5 Resort…       0      14    2015 July         27       1       0       2      2
+6 Resort…       0      14    2015 July         27       1       0       2      2
+# … with 22 more variables: children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;,
+#   country &lt;chr&gt;, market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;,
+#   is_repeated_guest &lt;dbl&gt;, previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, reserved_room_type &lt;chr&gt;,
+#   assigned_room_type &lt;chr&gt;, booking_changes &lt;dbl&gt;, deposit_type &lt;chr&gt;,
+#   agent &lt;chr&gt;, company &lt;chr&gt;, days_in_waiting_list &lt;dbl&gt;,
+#   customer_type &lt;chr&gt;, adr &lt;dbl&gt;, required_car_parking_spaces &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 <p>The original dataframe had 119,390 rows while the new dataframe called ‘NULLS’ created above has 119,173 rows. This shows that the vast majority of the rows in the dataset have at least one “NULL” value (99.8%).</p>
@@ -318,71 +361,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify columns containing NA</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df)[<span class="fu">apply</span>(df, <span class="dv">2</span>, anyNA)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify columns containing NA</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df)[<span class="fu">apply</span>(df, <span class="dv">2</span>, anyNA)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in apply(df, 2, anyNA): dim(X) must have a positive length</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "children"</code></pre>
 </div>
 </div>
 <p>The ‘children’ column of the data set contains values that are not available. We can use the filter function to identify the rows of the data set that contain NA.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the rows in the data set containing NA</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df, <span class="fu">is.na</span>(children))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the rows in the data set containing NA</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df, <span class="fu">is.na</span>(children))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in attr(data, "tsp") &lt;- c(start, end, frequency): object is not a matrix</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 32
+  hotel   is_ca…¹ lead_…² arriv…³ arriv…⁴ arriv…⁵ arriv…⁶ stays…⁷ stays…⁸ adults
+  &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1 City H…       1       2    2015 August       32       3       1       0      2
+2 City H…       1       1    2015 August       32       5       0       2      2
+3 City H…       1       1    2015 August       32       5       0       2      3
+4 City H…       1       8    2015 August       33      13       2       5      2
+# … with 22 more variables: children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;,
+#   country &lt;chr&gt;, market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;,
+#   is_repeated_guest &lt;dbl&gt;, previous_cancellations &lt;dbl&gt;,
+#   previous_bookings_not_canceled &lt;dbl&gt;, reserved_room_type &lt;chr&gt;,
+#   assigned_room_type &lt;chr&gt;, booking_changes &lt;dbl&gt;, deposit_type &lt;chr&gt;,
+#   agent &lt;chr&gt;, company &lt;chr&gt;, days_in_waiting_list &lt;dbl&gt;,
+#   customer_type &lt;chr&gt;, adr &lt;dbl&gt;, required_car_parking_spaces &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 <p>The data set has 119,390 rows. The code above shows that 4 of those rows contain entries that are not available. Since only a small proportion of rows contain entries that are not available, it is likely safe to remove them. Running the code cell below will remove the rows listed above and generate a clean data set.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>An analysis of the ‘arrival_data_year’ column reveals that the data was collected over the course of three years from 2015 to 2017. This can be shown with the following R command: <code>summary(df$arrival_date_year)</code>. Additionally, we can see that the tibble contains information about hotel bookings from all over the world, as evident by the ‘country’ column. The code chunk below reveals that there are 167 unique countries in the data set. Note that although the tibble generated below has 168 rows, one of those rows is for those data entries whose country is not known. In these cases, the country is listed as “NULL”.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">select</span>(df, country) <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">TotalBookings =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(TotalBookings))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">select</span>(df, country) <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">TotalBookings =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(TotalBookings))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>countries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in select(df, country) %&gt;% group_by(country) %&gt;% summarise(TotalBookings = n()) %&gt;% : could not find function "%&gt;%"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 178 × 2
+   country TotalBookings
+   &lt;chr&gt;           &lt;int&gt;
+ 1 PRT             48586
+ 2 GBR             12129
+ 3 FRA             10415
+ 4 ESP              8568
+ 5 DEU              7287
+ 6 ITA              3766
+ 7 IRL              3375
+ 8 BEL              2342
+ 9 BRA              2224
+10 NLD              2104
+# … with 168 more rows</code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>countries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(countries<span class="sc">$</span>TotalBookings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'countries' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+    1.00     2.00    12.50   670.71    74.75 48586.00 </code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(countries<span class="sc">$</span>TotalBookings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>countryHist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(countries, <span class="fu">aes</span>(<span class="at">x=</span>TotalBookings)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">bins =</span> <span class="dv">40</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countryHist <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Hotel Booking Frequency per Country vs Number of Countries"</span>) <span class="sc">+</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of hotel bookings"</span>, <span class="at">y =</span> <span class="st">"Number of countries"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in summary(countries$TotalBookings): object 'countries' not found</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>countryHist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(countries, <span class="fu">aes</span>(<span class="at">x=</span>TotalBookings)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">bins =</span> <span class="dv">40</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(countries, aes(x = TotalBookings)): could not find function "ggplot"</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countryHist <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Hotel Booking Frequency per Country vs Number of Countries"</span>) <span class="sc">+</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of hotel bookings"</span>, <span class="at">y =</span> <span class="st">"Number of countries"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in print(countryHist + ggtitle("Hotel Booking Frequency per Country vs Number of Countries") + : object 'countryHist' not found</code></pre>
+<div class="cell-output-display">
+<p><img src="challenge2_MatthewNorberg_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>An analysis on the tibble shows that Portugal has the most hotel bookings in the data set. Additionally, the summary command below reveals that the average number of bookings is 670.71 and the median number of bookings is 12.5. The histogram derived from the count of each country further reveals that the number of bookings per country is skewed.</p>
@@ -390,24 +449,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>hotel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>hotel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in df$hotel: object of type 'closure' is not subsettable</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Resort Hotel" "City Hotel"  </code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>reserved_room_type)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>reserved_room_type)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in df$reserved_room_type: object of type 'closure' is not subsettable</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "C" "A" "D" "E" "G" "F" "H" "L" "P" "B"</code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>is_repeated_guest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>is_repeated_guest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in df$is_repeated_guest: object of type 'closure' is not subsettable</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0 1</code></pre>
 </div>
 </div>
 </section>
@@ -418,61 +477,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the rows that contain hotel booking information in the United States</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>us <span class="ot">&lt;-</span> <span class="fu">filter</span>(df, country <span class="sc">==</span> <span class="st">"USA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the rows that contain hotel booking information in the United States</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>us <span class="ot">&lt;-</span> <span class="fu">filter</span>(df, country <span class="sc">==</span> <span class="st">"USA"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the proportion of bookings where the customer got the correct room type</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>correctType <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">/</span> <span class="fu">dim</span>(us)[<span class="dv">1</span>]</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the answer</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The proportion of bookings where the customer got the correct room type in the United States:"</span>, correctType[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in attr(data, "tsp") &lt;- c(start, end, frequency): object is not a matrix</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the proportion of bookings where the customer got the correct room type</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>correctType <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">/</span> <span class="fu">dim</span>(us)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in us %&gt;% filter(reserved_room_type == assigned_room_type) %&gt;% summarise(Count = n()): could not find function "%&gt;%"</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the answer</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The proportion of bookings where the customer got the correct room type in the United States:"</span>, correctType[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in cat("The proportion of bookings where the customer got the correct room type in the United States:", : object 'correctType' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>The proportion of bookings where the customer got the correct room type in the United States: 0.8874583</code></pre>
 </div>
 </div>
 <p>The data shows that most people were able to get the room type that they requested in the United States. However, I was in interested in figuring out how the United States compares to other countries in terms of accuracy of hotel bookings. The following code chunk computes the booking accuracy of all countries listed in the table and sorts them based on accuracy.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the booking accuracy of each country</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">CorrectRoom =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(countries, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PercentCorrect =</span> CorrectRoom <span class="sc">/</span> TotalBookings) <span class="sc">%&gt;%</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PercentCorrect))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the booking accuracy of each country</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">CorrectRoom =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(countries, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PercentCorrect =</span> CorrectRoom <span class="sc">/</span> TotalBookings) <span class="sc">%&gt;%</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PercentCorrect))</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in df %&gt;% group_by(country) %&gt;% filter(reserved_room_type == assigned_room_type) %&gt;% : could not find function "%&gt;%"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  country CorrectRoom TotalBookings PercentCorrect
+  &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;          &lt;dbl&gt;
+1 AIA               1             1              1
+2 ALB              12            12              1
+3 AND               7             7              1
+4 ARM               8             8              1
+5 ASM               1             1              1
+6 ATA               2             2              1</code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in head(r): object 'r' not found</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in summary(r): object 'r' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>   country           CorrectRoom      TotalBookings     PercentCorrect  
+ Length:173         Min.   :    1.0   Min.   :    1.0   Min.   :0.3333  
+ Class :character   1st Qu.:    2.0   1st Qu.:    3.0   1st Qu.:0.8765  
+ Mode  :character   Median :   14.0   Median :   14.0   Median :0.9231  
+                    Mean   :  603.9   Mean   :  690.1   Mean   :0.9107  
+                    3rd Qu.:   67.0   3rd Qu.:   80.0   3rd Qu.:1.0000  
+                    Max.   :42477.0   Max.   :48586.0   Max.   :1.0000  </code></pre>
 </div>
 </div>
 <p>The results from the code chunk above show that there are many countries with perfect booking accuracy. Furthermore, the average accuracy was 91%. Therefore, the United States is below average in terms of hotel booking accuracy.</p>
@@ -480,23 +538,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute central tendency and dispersion for total number of nights in the united states grouped by children and babies</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Total number of nights = weekend nights + week nights</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_nights =</span> stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights) <span class="sc">%&gt;%</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(children, babies) <span class="sc">%&gt;%</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageNights =</span> <span class="fu">mean</span>(total_nights), <span class="at">NumOccurences =</span> <span class="fu">n</span>(), <span class="at">MedianNights =</span> <span class="fu">median</span>(total_nights))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute central tendency and dispersion for total number of nights in the united states grouped by children and babies</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Total number of nights = weekend nights + week nights</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_nights =</span> stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights) <span class="sc">%&gt;%</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(children, babies) <span class="sc">%&gt;%</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageNights =</span> <span class="fu">mean</span>(total_nights), <span class="at">NumOccurences =</span> <span class="fu">n</span>(), <span class="at">MedianNights =</span> <span class="fu">median</span>(total_nights))</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the information</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>temp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in us %&gt;% mutate(total_nights = stays_in_weekend_nights + stays_in_week_nights) %&gt;% : could not find function "%&gt;%"</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the information</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>temp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'temp' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+# Groups:   children [4]
+  children babies AverageNights NumOccurences MedianNights
+     &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;        &lt;dbl&gt;
+1        0      0          2.76          1871          2  
+2        0      1          3.17             6          3.5
+3        1      0          2.51            83          2  
+4        2      0          3.16           132          3  
+5        3      0          1.6              5          1  </code></pre>
 </div>
 </div>
 <p>The results in the table above show that offspring status of a hotel booking does not seem to have an impact on the average number of nights stayed in the hotel.</p>
@@ -504,23 +565,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets look at lead time statistics grouped by month to see if some months are more popular</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>leadTime <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(arrival_date_month) <span class="sc">%&gt;%</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageLeadTime =</span> <span class="fu">mean</span>(lead_time), </span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sdLeadTime =</span> <span class="fu">sd</span>(lead_time), </span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">maxLeadTime =</span> <span class="fu">max</span>(lead_time), </span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">minLeadTime =</span> <span class="fu">min</span>(lead_time))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets look at lead time statistics grouped by month to see if some months are more popular</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>leadTime <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(arrival_date_month) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageLeadTime =</span> <span class="fu">mean</span>(lead_time), </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sdLeadTime =</span> <span class="fu">sd</span>(lead_time), </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">maxLeadTime =</span> <span class="fu">max</span>(lead_time), </span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">minLeadTime =</span> <span class="fu">min</span>(lead_time))</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>leadTime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in us %&gt;% group_by(arrival_date_month) %&gt;% summarise(AverageLeadTime = mean(lead_time), : could not find function "%&gt;%"</code></pre>
-</div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>leadTime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'leadTime' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 5
+   arrival_date_month AverageLeadTime sdLeadTime maxLeadTime minLeadTime
+   &lt;chr&gt;                        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+ 1 April                         76.5       74.2         317           0
+ 2 August                       101.       104.          504           0
+ 3 December                      58.7       63.3         237           0
+ 4 February                      24.9       35.8         240           0
+ 5 January                       35.3       47.3         343           0
+ 6 July                         104.        96.4         476           0
+ 7 June                          89.0       77.0         423           0
+ 8 March                         54.3       56.6         286           0
+ 9 May                           85.2       80.8         340           0
+10 November                      48.4       51.4         260           0
+11 October                       67.4       78.6         241           0
+12 September                     56.6       73.5         542           0</code></pre>
 </div>
 </div>
 <p>The results above show that the summer months seem to have the highest average lead time while some of the winter months have the fewest lead times. This may indicate that the summer months are the most popular times to go on vacation.</p>
@@ -802,203 +872,203 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="DACSS/DACSS_601_Fall_2022" data-repo-id="" data-category="Announcements" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb55" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Challenge 2 Instructions"</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Matthew Norberg"</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="an">desription:</span><span class="co"> "Data wrangling: using group() and summarise()"</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "09/17/2022"</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="co">  - challenge_2</span></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co">  - railroads</span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="co">  - faostat</span></span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a><span class="co">  - hotel_bookings</span></span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>)</span>
-<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Challenge Overview</span></span>
-<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a>Today's challenge is to</span>
-<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a>1)  read in a data set, and describe the data using both words and any supporting information (e.g., tables, etc)</span>
-<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a>2)  provide summary statistics for different interesting groups within the data, and interpret those statistics</span>
-<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Read in the Data</span></span>
-<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a>Read in one (or more) of the following data sets, available in the <span class="in">`posts/_data`</span> folder, using the correct R package and command.</span>
-<span id="cb55-41"><a href="#cb55-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-42"><a href="#cb55-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>railroad<span class="sc">\*</span>.csv or StateCounty2012.xls ⭐</span>
-<span id="cb55-43"><a href="#cb55-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>FAOstat<span class="sc">\*</span>.csv or birds.csv ⭐⭐⭐</span>
-<span id="cb55-44"><a href="#cb55-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>hotel_bookings.csv ⭐⭐⭐⭐</span>
-<span id="cb55-45"><a href="#cb55-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-48"><a href="#cb55-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-49"><a href="#cb55-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the hotel bookings data set</span></span>
-<span id="cb55-50"><a href="#cb55-50" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'./_data/hotel_bookings.csv'</span>)</span>
-<span id="cb55-51"><a href="#cb55-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-52"><a href="#cb55-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-53"><a href="#cb55-53" aria-hidden="true" tabindex="-1"></a>Add any comments or documentation as needed. More challenging data may require additional code chunks and documentation.</span>
-<span id="cb55-54"><a href="#cb55-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-55"><a href="#cb55-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Describe the data</span></span>
-<span id="cb55-56"><a href="#cb55-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-57"><a href="#cb55-57" aria-hidden="true" tabindex="-1"></a>Using a combination of words and results of R commands, can you provide a high level description of the data? Describe as efficiently as possible where/how the data was (likely) gathered, indicate the cases and variables (both the interpretation and any details you deem useful to the reader to fully understand your chosen data).</span>
-<span id="cb55-58"><a href="#cb55-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-59"><a href="#cb55-59" aria-hidden="true" tabindex="-1"></a>First, let's look at the columns in the data set and the first few entries to get an idea of what each instance of the data is describing.</span>
-<span id="cb55-60"><a href="#cb55-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-63"><a href="#cb55-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-64"><a href="#cb55-64" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(df)</span>
-<span id="cb55-65"><a href="#cb55-65" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span>
-<span id="cb55-66"><a href="#cb55-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-67"><a href="#cb55-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-68"><a href="#cb55-68" aria-hidden="true" tabindex="-1"></a>The output above shows that each row in the data set is describing an instance of a hotel booking.  For each booking, we are recording 32 data parameters as described by the columns.  Additionally, we can see that some of the entries have a value of "NULL".  For instance, the first row of the data set has an agent and company listed as "NULL".  This is probably used to describe instances in which an travel agent or travel company was not used.  The following code creates a data frame containing all the rows that have a "NULL" value.</span>
-<span id="cb55-69"><a href="#cb55-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-72"><a href="#cb55-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-73"><a href="#cb55-73" aria-hidden="true" tabindex="-1"></a>NULLS <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'NULL'</span>)))</span>
-<span id="cb55-74"><a href="#cb55-74" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NULLS)</span>
-<span id="cb55-75"><a href="#cb55-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-76"><a href="#cb55-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-77"><a href="#cb55-77" aria-hidden="true" tabindex="-1"></a>The original dataframe had 119,390 rows while the new dataframe called 'NULLS' created above has 119,173 rows.  This shows that the vast majority of the rows in the dataset have at least one "NULL" value (99.8%).</span>
-<span id="cb55-78"><a href="#cb55-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-79"><a href="#cb55-79" aria-hidden="true" tabindex="-1"></a>Let's find out if there are any missing values in the data set.  The code chunk below finds the columns that contain NA.</span>
-<span id="cb55-80"><a href="#cb55-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-83"><a href="#cb55-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-84"><a href="#cb55-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify columns containing NA</span></span>
-<span id="cb55-85"><a href="#cb55-85" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df)[<span class="fu">apply</span>(df, <span class="dv">2</span>, anyNA)]</span>
-<span id="cb55-86"><a href="#cb55-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-87"><a href="#cb55-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-88"><a href="#cb55-88" aria-hidden="true" tabindex="-1"></a>The 'children' column of the data set contains values that are not available.  We can use the filter function to identify the rows of the data set that contain NA.</span>
-<span id="cb55-89"><a href="#cb55-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-92"><a href="#cb55-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-93"><a href="#cb55-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the rows in the data set containing NA</span></span>
-<span id="cb55-94"><a href="#cb55-94" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df, <span class="fu">is.na</span>(children))</span>
-<span id="cb55-95"><a href="#cb55-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-96"><a href="#cb55-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-97"><a href="#cb55-97" aria-hidden="true" tabindex="-1"></a>The data set has 119,390 rows.  The code above shows that 4 of those rows contain entries that are not available.  Since only a small proportion of rows contain entries that are not available, it is likely safe to remove them.  Running the code cell below will remove the rows listed above and generate a clean data set. </span>
-<span id="cb55-98"><a href="#cb55-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-101"><a href="#cb55-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-102"><a href="#cb55-102" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df)</span>
-<span id="cb55-103"><a href="#cb55-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-104"><a href="#cb55-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-105"><a href="#cb55-105" aria-hidden="true" tabindex="-1"></a>An analysis of the 'arrival_data_year' column reveals that the data was collected over the course of three years from 2015 to 2017.  This can be shown with the following R command: <span class="in">`summary(df$arrival_date_year)`</span>.  Additionally, we can see that the tibble contains information about hotel bookings from all over the world, as evident by the 'country' column.  The code chunk below reveals that there are 167 unique countries in the data set.  Note that although the tibble generated below has 168 rows, one of those rows is for those data entries whose country is not known.  In these cases, the country is listed as "NULL".  </span>
-<span id="cb55-106"><a href="#cb55-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-109"><a href="#cb55-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-110"><a href="#cb55-110" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">select</span>(df, country) <span class="sc">%&gt;%</span></span>
-<span id="cb55-111"><a href="#cb55-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb55-112"><a href="#cb55-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">TotalBookings =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb55-113"><a href="#cb55-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(TotalBookings))</span>
-<span id="cb55-114"><a href="#cb55-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-115"><a href="#cb55-115" aria-hidden="true" tabindex="-1"></a>countries</span>
-<span id="cb55-116"><a href="#cb55-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-117"><a href="#cb55-117" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(countries<span class="sc">$</span>TotalBookings)</span>
-<span id="cb55-118"><a href="#cb55-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-119"><a href="#cb55-119" aria-hidden="true" tabindex="-1"></a>countryHist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(countries, <span class="fu">aes</span>(<span class="at">x=</span>TotalBookings)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">bins =</span> <span class="dv">40</span>)</span>
-<span id="cb55-120"><a href="#cb55-120" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countryHist <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Hotel Booking Frequency per Country vs Number of Countries"</span>) <span class="sc">+</span> </span>
-<span id="cb55-121"><a href="#cb55-121" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of hotel bookings"</span>, <span class="at">y =</span> <span class="st">"Number of countries"</span>))</span>
-<span id="cb55-122"><a href="#cb55-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-123"><a href="#cb55-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-124"><a href="#cb55-124" aria-hidden="true" tabindex="-1"></a>An analysis on the tibble shows that Portugal has the most hotel bookings in the data set.  Additionally, the summary command below reveals that the average number of bookings is 670.71 and the median number of bookings is 12.5.  The histogram derived from the count of each country further reveals that the number of bookings per country is skewed. </span>
-<span id="cb55-125"><a href="#cb55-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-126"><a href="#cb55-126" aria-hidden="true" tabindex="-1"></a>The categorical nature of the 'hotel', 'meal', 'reserved_room_type', and 'customer_type' columns of the data set lead me to believe that the data was collected by a singular Hotel Company that has locations all over the world.  They have categorized their hotels as being in one of two possible categories, "Resort Hotel" and "City Hotel".  It seems unlikely that multiple hotel companies would use the same categorization.  Additionally, this particular hotel company has a set of meal categories, room type categories, and customer categories.  I would argue that these categorization are not a standard that is being used by multiple hotels which furthers my theory that this data was collected by a singular hotel company.  The code chunk below lists the possible categories for each of the aforementioned columns.  </span>
-<span id="cb55-127"><a href="#cb55-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-130"><a href="#cb55-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-131"><a href="#cb55-131" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>hotel)</span>
-<span id="cb55-132"><a href="#cb55-132" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>reserved_room_type)</span>
-<span id="cb55-133"><a href="#cb55-133" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>is_repeated_guest)</span>
-<span id="cb55-134"><a href="#cb55-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-135"><a href="#cb55-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-136"><a href="#cb55-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## Provide Grouped Summary Statistics</span></span>
-<span id="cb55-137"><a href="#cb55-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-138"><a href="#cb55-138" aria-hidden="true" tabindex="-1"></a>Conduct some exploratory data analysis, using dplyr commands such as <span class="in">`group_by()`</span>, <span class="in">`select()`</span>, <span class="in">`filter()`</span>, and <span class="in">`summarise()`</span>. Find the central tendency (mean, median, mode) and dispersion (standard deviation, mix/max/quantile) for different subgroups within the data set.</span>
-<span id="cb55-139"><a href="#cb55-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-140"><a href="#cb55-140" aria-hidden="true" tabindex="-1"></a>Let's look at the set of hotel bookings that took place in the United States.  I was interested in determining how many bookings were made in which the customer got the type of room that they requested.  The code chunk below answers this question.  </span>
-<span id="cb55-141"><a href="#cb55-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-144"><a href="#cb55-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-145"><a href="#cb55-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the rows that contain hotel booking information in the United States</span></span>
-<span id="cb55-146"><a href="#cb55-146" aria-hidden="true" tabindex="-1"></a>us <span class="ot">&lt;-</span> <span class="fu">filter</span>(df, country <span class="sc">==</span> <span class="st">"USA"</span>)</span>
-<span id="cb55-147"><a href="#cb55-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-148"><a href="#cb55-148" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the proportion of bookings where the customer got the correct room type</span></span>
-<span id="cb55-149"><a href="#cb55-149" aria-hidden="true" tabindex="-1"></a>correctType <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
-<span id="cb55-150"><a href="#cb55-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
-<span id="cb55-151"><a href="#cb55-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">/</span> <span class="fu">dim</span>(us)[<span class="dv">1</span>]</span>
-<span id="cb55-152"><a href="#cb55-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-153"><a href="#cb55-153" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the answer</span></span>
-<span id="cb55-154"><a href="#cb55-154" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The proportion of bookings where the customer got the correct room type in the United States:"</span>, correctType[[<span class="dv">1</span>]])</span>
-<span id="cb55-155"><a href="#cb55-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-156"><a href="#cb55-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-157"><a href="#cb55-157" aria-hidden="true" tabindex="-1"></a>The data shows that most people were able to get the room type that they requested in the United States. However, I was in interested in figuring out how the United States compares to other countries in terms of accuracy of hotel bookings.  The following code chunk computes the booking accuracy of all countries listed in the table and sorts them based on accuracy.</span>
-<span id="cb55-158"><a href="#cb55-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-161"><a href="#cb55-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-162"><a href="#cb55-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the booking accuracy of each country</span></span>
-<span id="cb55-163"><a href="#cb55-163" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb55-164"><a href="#cb55-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb55-165"><a href="#cb55-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
-<span id="cb55-166"><a href="#cb55-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">CorrectRoom =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb55-167"><a href="#cb55-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(countries, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb55-168"><a href="#cb55-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PercentCorrect =</span> CorrectRoom <span class="sc">/</span> TotalBookings) <span class="sc">%&gt;%</span></span>
-<span id="cb55-169"><a href="#cb55-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PercentCorrect))</span>
-<span id="cb55-170"><a href="#cb55-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-171"><a href="#cb55-171" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
-<span id="cb55-172"><a href="#cb55-172" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r)</span>
-<span id="cb55-173"><a href="#cb55-173" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(r)</span>
-<span id="cb55-174"><a href="#cb55-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-175"><a href="#cb55-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-176"><a href="#cb55-176" aria-hidden="true" tabindex="-1"></a>The results from the code chunk above show that there are many countries with perfect booking accuracy.  Furthermore, the average accuracy was 91%.  Therefore, the United States is below average in terms of hotel booking accuracy.  </span>
-<span id="cb55-177"><a href="#cb55-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-178"><a href="#cb55-178" aria-hidden="true" tabindex="-1"></a>In addition to hotel booking accuracy, I was also interested in the total number of nights stayed that each booking incurred in the United States.  The data set has two columns for the number of nights stayed: 'stays_in_weekend_nights' and 'stays_in_week_nights'.  Here, I am defining the total number of nights to be the sum of those two children.  Specifically, I wanted to know if the total number of nights stayed in the hotel is influenced by whether or not the booking included children and babies.  The code chunk below computes the average number of nights and the median number of nights for each (children, babies) pairing in the data set for hotel bookings in the US.    </span>
-<span id="cb55-179"><a href="#cb55-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-182"><a href="#cb55-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-183"><a href="#cb55-183" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute central tendency and dispersion for total number of nights in the united states grouped by children and babies</span></span>
-<span id="cb55-184"><a href="#cb55-184" aria-hidden="true" tabindex="-1"></a><span class="co"># Total number of nights = weekend nights + week nights</span></span>
-<span id="cb55-185"><a href="#cb55-185" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
-<span id="cb55-186"><a href="#cb55-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_nights =</span> stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights) <span class="sc">%&gt;%</span></span>
-<span id="cb55-187"><a href="#cb55-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(children, babies) <span class="sc">%&gt;%</span></span>
-<span id="cb55-188"><a href="#cb55-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageNights =</span> <span class="fu">mean</span>(total_nights), <span class="at">NumOccurences =</span> <span class="fu">n</span>(), <span class="at">MedianNights =</span> <span class="fu">median</span>(total_nights))</span>
-<span id="cb55-189"><a href="#cb55-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-190"><a href="#cb55-190" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the information</span></span>
-<span id="cb55-191"><a href="#cb55-191" aria-hidden="true" tabindex="-1"></a>temp</span>
-<span id="cb55-192"><a href="#cb55-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-193"><a href="#cb55-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-194"><a href="#cb55-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-195"><a href="#cb55-195" aria-hidden="true" tabindex="-1"></a>The results in the table above show that offspring status of a hotel booking does not seem to have an impact on the average number of nights stayed in the hotel.</span>
-<span id="cb55-196"><a href="#cb55-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-197"><a href="#cb55-197" aria-hidden="true" tabindex="-1"></a>Lastly, I was interested in the lead time attribute for bookings in the United States.  I wanted to determine if some months are more popular than others and therefore have a larger lead time.  The following code chunk computes averaged lead time grouped by 'arrival_date_month' to determine which months are the most popular. </span>
-<span id="cb55-198"><a href="#cb55-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-201"><a href="#cb55-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-202"><a href="#cb55-202" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets look at lead time statistics grouped by month to see if some months are more popular</span></span>
-<span id="cb55-203"><a href="#cb55-203" aria-hidden="true" tabindex="-1"></a>leadTime <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
-<span id="cb55-204"><a href="#cb55-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(arrival_date_month) <span class="sc">%&gt;%</span></span>
-<span id="cb55-205"><a href="#cb55-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageLeadTime =</span> <span class="fu">mean</span>(lead_time), </span>
-<span id="cb55-206"><a href="#cb55-206" aria-hidden="true" tabindex="-1"></a>            <span class="at">sdLeadTime =</span> <span class="fu">sd</span>(lead_time), </span>
-<span id="cb55-207"><a href="#cb55-207" aria-hidden="true" tabindex="-1"></a>            <span class="at">maxLeadTime =</span> <span class="fu">max</span>(lead_time), </span>
-<span id="cb55-208"><a href="#cb55-208" aria-hidden="true" tabindex="-1"></a>            <span class="at">minLeadTime =</span> <span class="fu">min</span>(lead_time))</span>
-<span id="cb55-209"><a href="#cb55-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-210"><a href="#cb55-210" aria-hidden="true" tabindex="-1"></a>leadTime</span>
-<span id="cb55-211"><a href="#cb55-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb55-212"><a href="#cb55-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-213"><a href="#cb55-213" aria-hidden="true" tabindex="-1"></a>The results above show that the summer months seem to have the highest average lead time while some of the winter months have the fewest lead times.  This may indicate that the summer months are the most popular times to go on vacation.  </span>
-<span id="cb55-214"><a href="#cb55-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-215"><a href="#cb55-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explain and Interpret</span></span>
-<span id="cb55-216"><a href="#cb55-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-217"><a href="#cb55-217" aria-hidden="true" tabindex="-1"></a>Be sure to explain why you choose a specific group. Comment on the interpretation of any interesting differences between groups that you uncover. This section can be integrated with the exploratory data analysis, just be sure it is included.</span>
-<span id="cb55-218"><a href="#cb55-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-219"><a href="#cb55-219" aria-hidden="true" tabindex="-1"></a>I choose to look at hotel bookings in the United States to do my analysis.  The first portion of my analysis looked at hotel booking accuracy in the United States versus the other countries in the data set.  I was surprised that the United States is below the average accuracy in the data set. </span>
-<span id="cb55-220"><a href="#cb55-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-221"><a href="#cb55-221" aria-hidden="true" tabindex="-1"></a>I also looked at the total number of nights for each booking the United States.  I wanted to know if having children or babies included in the hotel booking impacted how long people stay.  The idea was interesting, but the results indicated that having children and babies included in the booking did not seem to impact total stay.</span>
-<span id="cb55-222"><a href="#cb55-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-223"><a href="#cb55-223" aria-hidden="true" tabindex="-1"></a>Lastly, I looked at the amount of lead time in hotel bookings for the United States in order to see which months were the most popular.  Unsurprisingly, the summer months were among the most popular and the least popular were winter months. </span>
+<div class="sourceCode" id="cb35" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Challenge 2 Instructions"</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Matthew Norberg"</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="an">desription:</span><span class="co"> "Data wrangling: using group() and summarise()"</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "09/17/2022"</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co">  - challenge_2</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="co">  - railroads</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="co">  - faostat</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co">  - hotel_bookings</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>)</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Challenge Overview</span></span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>Today's challenge is to</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>1)  read in a data set, and describe the data using both words and any supporting information (e.g., tables, etc)</span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>2)  provide summary statistics for different interesting groups within the data, and interpret those statistics</span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Read in the Data</span></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>Read in one (or more) of the following data sets, available in the <span class="in">`posts/_data`</span> folder, using the correct R package and command.</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>railroad<span class="sc">\*</span>.csv or StateCounty2012.xls ⭐</span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>FAOstat<span class="sc">\*</span>.csv or birds.csv ⭐⭐⭐</span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>hotel_bookings.csv ⭐⭐⭐⭐</span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the hotel bookings data set</span></span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'./_data/hotel_bookings.csv'</span>)</span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-53"><a href="#cb35-53" aria-hidden="true" tabindex="-1"></a>Add any comments or documentation as needed. More challenging data may require additional code chunks and documentation.</span>
+<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-55"><a href="#cb35-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Describe the data</span></span>
+<span id="cb35-56"><a href="#cb35-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-57"><a href="#cb35-57" aria-hidden="true" tabindex="-1"></a>Using a combination of words and results of R commands, can you provide a high level description of the data? Describe as efficiently as possible where/how the data was (likely) gathered, indicate the cases and variables (both the interpretation and any details you deem useful to the reader to fully understand your chosen data).</span>
+<span id="cb35-58"><a href="#cb35-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-59"><a href="#cb35-59" aria-hidden="true" tabindex="-1"></a>First, let's look at the columns in the data set and the first few entries to get an idea of what each instance of the data is describing.</span>
+<span id="cb35-60"><a href="#cb35-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-63"><a href="#cb35-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-64"><a href="#cb35-64" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(df)</span>
+<span id="cb35-65"><a href="#cb35-65" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span>
+<span id="cb35-66"><a href="#cb35-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-67"><a href="#cb35-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-68"><a href="#cb35-68" aria-hidden="true" tabindex="-1"></a>The output above shows that each row in the data set is describing an instance of a hotel booking.  For each booking, we are recording 32 data parameters as described by the columns.  Additionally, we can see that some of the entries have a value of "NULL".  For instance, the first row of the data set has an agent and company listed as "NULL".  This is probably used to describe instances in which an travel agent or travel company was not used.  The following code creates a data frame containing all the rows that have a "NULL" value.</span>
+<span id="cb35-69"><a href="#cb35-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-72"><a href="#cb35-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-73"><a href="#cb35-73" aria-hidden="true" tabindex="-1"></a>NULLS <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'NULL'</span>)))</span>
+<span id="cb35-74"><a href="#cb35-74" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NULLS)</span>
+<span id="cb35-75"><a href="#cb35-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-76"><a href="#cb35-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-77"><a href="#cb35-77" aria-hidden="true" tabindex="-1"></a>The original dataframe had 119,390 rows while the new dataframe called 'NULLS' created above has 119,173 rows.  This shows that the vast majority of the rows in the dataset have at least one "NULL" value (99.8%).</span>
+<span id="cb35-78"><a href="#cb35-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-79"><a href="#cb35-79" aria-hidden="true" tabindex="-1"></a>Let's find out if there are any missing values in the data set.  The code chunk below finds the columns that contain NA.</span>
+<span id="cb35-80"><a href="#cb35-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-83"><a href="#cb35-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-84"><a href="#cb35-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify columns containing NA</span></span>
+<span id="cb35-85"><a href="#cb35-85" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df)[<span class="fu">apply</span>(df, <span class="dv">2</span>, anyNA)]</span>
+<span id="cb35-86"><a href="#cb35-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-87"><a href="#cb35-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-88"><a href="#cb35-88" aria-hidden="true" tabindex="-1"></a>The 'children' column of the data set contains values that are not available.  We can use the filter function to identify the rows of the data set that contain NA.</span>
+<span id="cb35-89"><a href="#cb35-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-92"><a href="#cb35-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-93"><a href="#cb35-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the rows in the data set containing NA</span></span>
+<span id="cb35-94"><a href="#cb35-94" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df, <span class="fu">is.na</span>(children))</span>
+<span id="cb35-95"><a href="#cb35-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-96"><a href="#cb35-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-97"><a href="#cb35-97" aria-hidden="true" tabindex="-1"></a>The data set has 119,390 rows.  The code above shows that 4 of those rows contain entries that are not available.  Since only a small proportion of rows contain entries that are not available, it is likely safe to remove them.  Running the code cell below will remove the rows listed above and generate a clean data set. </span>
+<span id="cb35-98"><a href="#cb35-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-101"><a href="#cb35-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-102"><a href="#cb35-102" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df)</span>
+<span id="cb35-103"><a href="#cb35-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-104"><a href="#cb35-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-105"><a href="#cb35-105" aria-hidden="true" tabindex="-1"></a>An analysis of the 'arrival_data_year' column reveals that the data was collected over the course of three years from 2015 to 2017.  This can be shown with the following R command: <span class="in">`summary(df$arrival_date_year)`</span>.  Additionally, we can see that the tibble contains information about hotel bookings from all over the world, as evident by the 'country' column.  The code chunk below reveals that there are 167 unique countries in the data set.  Note that although the tibble generated below has 168 rows, one of those rows is for those data entries whose country is not known.  In these cases, the country is listed as "NULL".  </span>
+<span id="cb35-106"><a href="#cb35-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-109"><a href="#cb35-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-110"><a href="#cb35-110" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">select</span>(df, country) <span class="sc">%&gt;%</span></span>
+<span id="cb35-111"><a href="#cb35-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb35-112"><a href="#cb35-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">TotalBookings =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb35-113"><a href="#cb35-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(TotalBookings))</span>
+<span id="cb35-114"><a href="#cb35-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-115"><a href="#cb35-115" aria-hidden="true" tabindex="-1"></a>countries</span>
+<span id="cb35-116"><a href="#cb35-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-117"><a href="#cb35-117" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(countries<span class="sc">$</span>TotalBookings)</span>
+<span id="cb35-118"><a href="#cb35-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-119"><a href="#cb35-119" aria-hidden="true" tabindex="-1"></a>countryHist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(countries, <span class="fu">aes</span>(<span class="at">x=</span>TotalBookings)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">bins =</span> <span class="dv">40</span>)</span>
+<span id="cb35-120"><a href="#cb35-120" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countryHist <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Hotel Booking Frequency per Country vs Number of Countries"</span>) <span class="sc">+</span> </span>
+<span id="cb35-121"><a href="#cb35-121" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of hotel bookings"</span>, <span class="at">y =</span> <span class="st">"Number of countries"</span>))</span>
+<span id="cb35-122"><a href="#cb35-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-123"><a href="#cb35-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-124"><a href="#cb35-124" aria-hidden="true" tabindex="-1"></a>An analysis on the tibble shows that Portugal has the most hotel bookings in the data set.  Additionally, the summary command below reveals that the average number of bookings is 670.71 and the median number of bookings is 12.5.  The histogram derived from the count of each country further reveals that the number of bookings per country is skewed. </span>
+<span id="cb35-125"><a href="#cb35-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-126"><a href="#cb35-126" aria-hidden="true" tabindex="-1"></a>The categorical nature of the 'hotel', 'meal', 'reserved_room_type', and 'customer_type' columns of the data set lead me to believe that the data was collected by a singular Hotel Company that has locations all over the world.  They have categorized their hotels as being in one of two possible categories, "Resort Hotel" and "City Hotel".  It seems unlikely that multiple hotel companies would use the same categorization.  Additionally, this particular hotel company has a set of meal categories, room type categories, and customer categories.  I would argue that these categorization are not a standard that is being used by multiple hotels which furthers my theory that this data was collected by a singular hotel company.  The code chunk below lists the possible categories for each of the aforementioned columns.  </span>
+<span id="cb35-127"><a href="#cb35-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-130"><a href="#cb35-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-131"><a href="#cb35-131" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>hotel)</span>
+<span id="cb35-132"><a href="#cb35-132" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>reserved_room_type)</span>
+<span id="cb35-133"><a href="#cb35-133" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>is_repeated_guest)</span>
+<span id="cb35-134"><a href="#cb35-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-135"><a href="#cb35-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-136"><a href="#cb35-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## Provide Grouped Summary Statistics</span></span>
+<span id="cb35-137"><a href="#cb35-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-138"><a href="#cb35-138" aria-hidden="true" tabindex="-1"></a>Conduct some exploratory data analysis, using dplyr commands such as <span class="in">`group_by()`</span>, <span class="in">`select()`</span>, <span class="in">`filter()`</span>, and <span class="in">`summarise()`</span>. Find the central tendency (mean, median, mode) and dispersion (standard deviation, mix/max/quantile) for different subgroups within the data set.</span>
+<span id="cb35-139"><a href="#cb35-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-140"><a href="#cb35-140" aria-hidden="true" tabindex="-1"></a>Let's look at the set of hotel bookings that took place in the United States.  I was interested in determining how many bookings were made in which the customer got the type of room that they requested.  The code chunk below answers this question.  </span>
+<span id="cb35-141"><a href="#cb35-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-144"><a href="#cb35-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-145"><a href="#cb35-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the rows that contain hotel booking information in the United States</span></span>
+<span id="cb35-146"><a href="#cb35-146" aria-hidden="true" tabindex="-1"></a>us <span class="ot">&lt;-</span> <span class="fu">filter</span>(df, country <span class="sc">==</span> <span class="st">"USA"</span>)</span>
+<span id="cb35-147"><a href="#cb35-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-148"><a href="#cb35-148" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the proportion of bookings where the customer got the correct room type</span></span>
+<span id="cb35-149"><a href="#cb35-149" aria-hidden="true" tabindex="-1"></a>correctType <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
+<span id="cb35-150"><a href="#cb35-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
+<span id="cb35-151"><a href="#cb35-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">/</span> <span class="fu">dim</span>(us)[<span class="dv">1</span>]</span>
+<span id="cb35-152"><a href="#cb35-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-153"><a href="#cb35-153" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the answer</span></span>
+<span id="cb35-154"><a href="#cb35-154" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The proportion of bookings where the customer got the correct room type in the United States:"</span>, correctType[[<span class="dv">1</span>]])</span>
+<span id="cb35-155"><a href="#cb35-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-156"><a href="#cb35-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-157"><a href="#cb35-157" aria-hidden="true" tabindex="-1"></a>The data shows that most people were able to get the room type that they requested in the United States. However, I was in interested in figuring out how the United States compares to other countries in terms of accuracy of hotel bookings.  The following code chunk computes the booking accuracy of all countries listed in the table and sorts them based on accuracy.</span>
+<span id="cb35-158"><a href="#cb35-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-161"><a href="#cb35-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-162"><a href="#cb35-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the booking accuracy of each country</span></span>
+<span id="cb35-163"><a href="#cb35-163" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb35-164"><a href="#cb35-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb35-165"><a href="#cb35-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(reserved_room_type <span class="sc">==</span> assigned_room_type) <span class="sc">%&gt;%</span></span>
+<span id="cb35-166"><a href="#cb35-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">CorrectRoom =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb35-167"><a href="#cb35-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(countries, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-168"><a href="#cb35-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PercentCorrect =</span> CorrectRoom <span class="sc">/</span> TotalBookings) <span class="sc">%&gt;%</span></span>
+<span id="cb35-169"><a href="#cb35-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PercentCorrect))</span>
+<span id="cb35-170"><a href="#cb35-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-171"><a href="#cb35-171" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
+<span id="cb35-172"><a href="#cb35-172" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(r)</span>
+<span id="cb35-173"><a href="#cb35-173" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(r)</span>
+<span id="cb35-174"><a href="#cb35-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-175"><a href="#cb35-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-176"><a href="#cb35-176" aria-hidden="true" tabindex="-1"></a>The results from the code chunk above show that there are many countries with perfect booking accuracy.  Furthermore, the average accuracy was 91%.  Therefore, the United States is below average in terms of hotel booking accuracy.  </span>
+<span id="cb35-177"><a href="#cb35-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-178"><a href="#cb35-178" aria-hidden="true" tabindex="-1"></a>In addition to hotel booking accuracy, I was also interested in the total number of nights stayed that each booking incurred in the United States.  The data set has two columns for the number of nights stayed: 'stays_in_weekend_nights' and 'stays_in_week_nights'.  Here, I am defining the total number of nights to be the sum of those two children.  Specifically, I wanted to know if the total number of nights stayed in the hotel is influenced by whether or not the booking included children and babies.  The code chunk below computes the average number of nights and the median number of nights for each (children, babies) pairing in the data set for hotel bookings in the US.    </span>
+<span id="cb35-179"><a href="#cb35-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-182"><a href="#cb35-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-183"><a href="#cb35-183" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute central tendency and dispersion for total number of nights in the united states grouped by children and babies</span></span>
+<span id="cb35-184"><a href="#cb35-184" aria-hidden="true" tabindex="-1"></a><span class="co"># Total number of nights = weekend nights + week nights</span></span>
+<span id="cb35-185"><a href="#cb35-185" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
+<span id="cb35-186"><a href="#cb35-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_nights =</span> stays_in_weekend_nights <span class="sc">+</span> stays_in_week_nights) <span class="sc">%&gt;%</span></span>
+<span id="cb35-187"><a href="#cb35-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(children, babies) <span class="sc">%&gt;%</span></span>
+<span id="cb35-188"><a href="#cb35-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageNights =</span> <span class="fu">mean</span>(total_nights), <span class="at">NumOccurences =</span> <span class="fu">n</span>(), <span class="at">MedianNights =</span> <span class="fu">median</span>(total_nights))</span>
+<span id="cb35-189"><a href="#cb35-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-190"><a href="#cb35-190" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the information</span></span>
+<span id="cb35-191"><a href="#cb35-191" aria-hidden="true" tabindex="-1"></a>temp</span>
+<span id="cb35-192"><a href="#cb35-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-193"><a href="#cb35-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-194"><a href="#cb35-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-195"><a href="#cb35-195" aria-hidden="true" tabindex="-1"></a>The results in the table above show that offspring status of a hotel booking does not seem to have an impact on the average number of nights stayed in the hotel.</span>
+<span id="cb35-196"><a href="#cb35-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-197"><a href="#cb35-197" aria-hidden="true" tabindex="-1"></a>Lastly, I was interested in the lead time attribute for bookings in the United States.  I wanted to determine if some months are more popular than others and therefore have a larger lead time.  The following code chunk computes averaged lead time grouped by 'arrival_date_month' to determine which months are the most popular. </span>
+<span id="cb35-198"><a href="#cb35-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-201"><a href="#cb35-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-202"><a href="#cb35-202" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets look at lead time statistics grouped by month to see if some months are more popular</span></span>
+<span id="cb35-203"><a href="#cb35-203" aria-hidden="true" tabindex="-1"></a>leadTime <span class="ot">&lt;-</span> us <span class="sc">%&gt;%</span></span>
+<span id="cb35-204"><a href="#cb35-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(arrival_date_month) <span class="sc">%&gt;%</span></span>
+<span id="cb35-205"><a href="#cb35-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AverageLeadTime =</span> <span class="fu">mean</span>(lead_time), </span>
+<span id="cb35-206"><a href="#cb35-206" aria-hidden="true" tabindex="-1"></a>            <span class="at">sdLeadTime =</span> <span class="fu">sd</span>(lead_time), </span>
+<span id="cb35-207"><a href="#cb35-207" aria-hidden="true" tabindex="-1"></a>            <span class="at">maxLeadTime =</span> <span class="fu">max</span>(lead_time), </span>
+<span id="cb35-208"><a href="#cb35-208" aria-hidden="true" tabindex="-1"></a>            <span class="at">minLeadTime =</span> <span class="fu">min</span>(lead_time))</span>
+<span id="cb35-209"><a href="#cb35-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-210"><a href="#cb35-210" aria-hidden="true" tabindex="-1"></a>leadTime</span>
+<span id="cb35-211"><a href="#cb35-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-212"><a href="#cb35-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-213"><a href="#cb35-213" aria-hidden="true" tabindex="-1"></a>The results above show that the summer months seem to have the highest average lead time while some of the winter months have the fewest lead times.  This may indicate that the summer months are the most popular times to go on vacation.  </span>
+<span id="cb35-214"><a href="#cb35-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-215"><a href="#cb35-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explain and Interpret</span></span>
+<span id="cb35-216"><a href="#cb35-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-217"><a href="#cb35-217" aria-hidden="true" tabindex="-1"></a>Be sure to explain why you choose a specific group. Comment on the interpretation of any interesting differences between groups that you uncover. This section can be integrated with the exploratory data analysis, just be sure it is included.</span>
+<span id="cb35-218"><a href="#cb35-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-219"><a href="#cb35-219" aria-hidden="true" tabindex="-1"></a>I choose to look at hotel bookings in the United States to do my analysis.  The first portion of my analysis looked at hotel booking accuracy in the United States versus the other countries in the data set.  I was surprised that the United States is below the average accuracy in the data set. </span>
+<span id="cb35-220"><a href="#cb35-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-221"><a href="#cb35-221" aria-hidden="true" tabindex="-1"></a>I also looked at the total number of nights for each booking the United States.  I wanted to know if having children or babies included in the hotel booking impacted how long people stay.  The idea was interesting, but the results indicated that having children and babies included in the booking did not seem to impact total stay.</span>
+<span id="cb35-222"><a href="#cb35-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-223"><a href="#cb35-223" aria-hidden="true" tabindex="-1"></a>Lastly, I looked at the amount of lead time in hotel bookings for the United States in order to see which months were the most popular.  Unsurprisingly, the summer months were among the most popular and the least popular were winter months. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
