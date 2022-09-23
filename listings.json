@@ -1,21 +1,5 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html",
-      "/posts/AleaciaMessiah_Challenge1.html",
-      "/posts/challenge8_instructions.html",
-      "/posts/challenge7_instructions.html",
-      "/posts/challenge6_instructions.html",
-      "/posts/challenge5_instructions.html",
-      "/posts/challenge4_instructions.html",
-      "/posts/challenge3_instructions.html",
-      "/posts/challenge2_instructions.html",
-      "/posts/challenge1_instructions.html"
-    ]
-  },
-  {
     "listing": "/about.html",
     "items": [
       "/about/about_abbybalint.html",
@@ -56,6 +40,23 @@
       "/about/About_VishnupriyaVaradharaju.html",
       "/about/About_Mariia_Dubyk.html",
       "/about/About_cerowley.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/post-with-code/index.html",
+      "/posts/welcome/index.html",
+      "/posts/AleaciaMessiah_Challenge1.html",
+      "/posts/challenge8_instructions.html",
+      "/posts/challenge7_instructions.html",
+      "/posts/challenge6_instructions.html",
+      "/posts/challenge5_instructions.html",
+      "/posts/challenge4_instructions.html",
+      "/posts/challenge3_instructions.html",
+      "/posts/challenge2_instructions.html",
+      "/posts/challenge1_instructions.html",
+      "/posts/challenge1_KarinaIbarra.html"
     ]
   }
 ]
